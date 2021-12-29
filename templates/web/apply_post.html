@@ -1,0 +1,134 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Header -->
+<header class="dsn-header-hero">
+    <div class="hero-img cover-bg" data-image-src='#'></div>
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-12">
+                <div class="header-content">
+                    <div class="name-title justify-content-center">
+                        <h1><span>APPLY NOW</span></h1>
+                    </div>
+                </div>
+
+
+                <a href="about.html#" class="hero__down">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="28" viewBox="0 0 18 28">
+                        <path
+                            d="M16.797 11.5c0 0.125-0.063 0.266-0.156 0.359l-7.281 7.281c-0.094 0.094-0.234 0.156-0.359 0.156s-0.266-0.063-0.359-0.156l-7.281-7.281c-0.094-0.094-0.156-0.234-0.156-0.359s0.063-0.266 0.156-0.359l0.781-0.781c0.094-0.094 0.219-0.156 0.359-0.156 0.125 0 0.266 0.063 0.359 0.156l6.141 6.141 6.141-6.141c0.094-0.094 0.234-0.156 0.359-0.156s0.266 0.063 0.359 0.156l0.781 0.781c0.094 0.094 0.156 0.234 0.156 0.359z">
+                        </path>
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div class="dsn-header-height"></div>
+<!-- End Header -->
+
+<!-- Page Content -->
+<div class="content-background"></div>
+<div class="page-content">
+    	
+        <div  id="myForm">
+        	<h4 class="text-center mb-4">Apply For {{apply_post_instance.job_description}} Post</h4>
+            <form action="" method="POST" enctype="multipart/form-data"  class="form-container" enctype="multipart/form-data">
+            	{% csrf_token %} 
+                {{form.as_p}}
+
+                <button type="submit" class="btn">Submit</button>
+                
+            </form>
+        </div>        
+ 
+
+</div>
+
+	
+
+
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+#myForm{
+	padding-top: 100px;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+/* Full-width input fields */
+.form-container input{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=file]{
+	color: #000;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+
+
+
+{% endblock %}

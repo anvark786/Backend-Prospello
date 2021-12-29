@@ -1,0 +1,16 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% load static %}
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+	        <br><br> <h2 style="color:#0fad00">Your Post Successfully Submitted</h2>
+	        <img src="{% static 'web/images/tick.png' %}">
+	        <h3>Dear, {{data.name|title}}</h3>
+	        <p style="font-size:20px;color:#5C5C5C;">Thank you for applying for the {{data.post_name}} position at Prospello Global. Your application has been received and we appreciate you taking the time to apply for a position in our company.and We will check it and get back to you soon.</p>
+	        <a href="{% url 'web:index' %}" class="btn btn-success">     Back to Home     </a>
+	    	<br><br>
+    	</div>        
+	</div>
+</div>

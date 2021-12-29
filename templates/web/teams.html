@@ -1,0 +1,78 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Header -->
+<header class="dsn-header-hero">
+    <div class="hero-img cover-bg" data-image-src='#' style="background-position: revert;"></div>
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-12">
+                <div class="header-content">
+                    <h4 class="subtitle text-center">Our</h4>
+                    <div class="name-title justify-content-center">
+                        <h1><span>LEADERSHIP TEAM</span></h1>
+                    </div>
+                </div>
+
+
+                <a href="project-1.html#" class="hero__down">
+                    <svg data-dsn-grid="parallax" version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="28" viewBox="0 0 18 28">
+                        <path
+                            d="M16.797 11.5c0 0.125-0.063 0.266-0.156 0.359l-7.281 7.281c-0.094 0.094-0.234 0.156-0.359 0.156s-0.266-0.063-0.359-0.156l-7.281-7.281c-0.094-0.094-0.156-0.234-0.156-0.359s0.063-0.266 0.156-0.359l0.781-0.781c0.094-0.094 0.219-0.156 0.359-0.156 0.125 0 0.266 0.063 0.359 0.156l6.141 6.141 6.141-6.141c0.094-0.094 0.234-0.156 0.359-0.156s0.266 0.063 0.359 0.156l0.781 0.781c0.094 0.094 0.156 0.234 0.156 0.359z">
+                        </path>
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div class="dsn-header-height"></div>
+<!-- End Header -->
+
+<div class="content-background"></div>
+<div class="page-content pb-4">
+    {% if teams %}
+
+        {% for team_data in teams %}
+        <div class="box-seat section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="inner-img">
+
+                            <div class="bg-img cover-bg" data-image-src="{{team_data.photo.url}}">
+                                
+                            </div>
+                        </div>
+                        <div class="pro-text" data-dsn-grid="move-section" data-move="5" data-duration="-100" style="margin-top: -178px">
+                            <h3 class="medium-size">{{team_data.name}}</h3>
+                            <h4>{{team_data.designation}}</h4>
+                            <p class="mt-30">{{team_data.description}}</p>
+                            {% if team_data.teams.last.role %}
+                            <h5 class="my-3">{{team_data.name | title}} is also designated with following Roles :</h5>
+                            {% endif %}
+                            <ul>
+                                {% for data in team_data.teams.all %}                            
+                                    <li>{{data.role}}</li>                                                     
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        {% endfor %}
+
+    {% else %}
+        <div class="col-md-12 pt-4">
+            <h2 class="text-center m-4">No Data Found</h2> 
+        </div>   
+    {% endif %}    
+
+   
+</div>
+
+{% endblock %}

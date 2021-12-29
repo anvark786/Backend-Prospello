@@ -1,0 +1,93 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Header -->
+<header class="dsn-header-hero contact-header">
+    <div class="hero-img map-custom cover-bg" id="map"></div>
+
+    <div class="box-info-wrap">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-12">
+
+                    <div class="header-content text-center">
+                        <div class="container col-12">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.6589895861002!2d75.7985133140748!3d11.286458652659972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65fb011b4f0b9%3A0x384a8e18e4000131!2sProspello%20Global!5e0!3m2!1sen!2sin!4v1639478188887!5m2!1sen!2sin"
+                                style="border:0; padding-left: 0;" allowfullscreen="" loading="lazy">
+
+                            </iframe>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="dsn-header-height"></div>
+<!-- End Header -->
+
+<div class="content-background"></div>
+<div class="page-content">
+    <section class="content-block  section-padding">
+        <div class="section-title mb-70 text-center">
+            <h5 class="subtitle">Let's talk</h5>
+            <h1>Get Appoinment</h1>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-box">
+                        <form  class="form ajax reload" method="post" action="{% url 'web:contact' %}" >
+                           {% csrf_token %}               
+                           
+                            <div class="input__wrap controls">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            {{form.name}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            {{form.email}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            {{form.phone}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" >
+                                        <div>
+                                            {{form.person}}                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" id="text-area">
+                                        {{form.message}}
+                                    </div>
+
+                                    <div class="col-12 text-center" id="sub">
+                                        <div data-dsn-grid="parallax">
+                                            <input type="submit" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+</div>
+{% endblock %}
