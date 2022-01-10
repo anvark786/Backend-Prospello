@@ -123,8 +123,7 @@
     transform: rotate(90deg) !important;
   }
   .header-top .header-container {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px;
   }
   .header-top .header-container .logo {
     padding-top: 10px;
