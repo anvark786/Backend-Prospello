@@ -241,7 +241,7 @@
 
 @media (max-width: 767px) {
   .header-top .header-container .logo img {
-    max-height: 30px;
+    max-height: 35px;
   }
   .dsn-header-hero .name-title h1 span{
     font-size: 24px
