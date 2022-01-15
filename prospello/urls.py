@@ -11,4 +11,4 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'Prospello Administration'
-admin.site.site_title = 'Sit administration | Prospello site admin'
+admin.site.site_title = 'Prospello site admin'
